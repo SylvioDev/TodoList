@@ -1,0 +1,12 @@
+# .gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+*.env
+*.DS_Store
+media/
+static/
+myenv/
+node_modules
