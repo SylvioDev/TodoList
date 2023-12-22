@@ -10,3 +10,5 @@ media/
 static/
 myenv/
 node_modules
+requirements.in
+requirements.txt
