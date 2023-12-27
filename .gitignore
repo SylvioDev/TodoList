@@ -11,5 +11,4 @@ static/
 myenv/
 TodoList/todo/migrations/
 node_modules
-requirements.in
-requirements.txt
+
