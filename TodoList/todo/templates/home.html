@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %} My todo {% endblock %}
+
+{% block content %}
+
+    <!-- App Wrapper -->
+    <main class="app">
+        <br>
+        
+        <button class = "btn btn-warning login-logout">
+            <a href="login.html">
+                <i class="fa fa-sign-in" style="color:white"></i>
+            </a>
+                 
+        </button>
+        <!-- Greeting -->
+        <section class="greeting list">
+            <h2 class="title">
+                <p style="margin-right: 10px;">Hello </p>
+                <label style="color:#f44336" for="">  Antonio</label> 
+                <br>
+                    
+            </h2>
+                
+                <center>
+                    <h2>06:14 pm</h2>
+                </center>
+                <br>
+                
+                
+                <br>
+                <h4>Sat 06 Jan, 2024</h4>
+                <h4>You have 2 incomplete tasks</h4>
+                
+        </section>
+        
+        
+
+        <!-- End of Greeting -->
+
+        <div class="jumbotron" style="background-color: #EEE;padding: 10px;border-radius: 15px">
+            
+            <section class="create-todo">
+                <h3>LIST OF TODOS BY CATEGORY</h3>
+                <br>
+                <form id="new-todo-form">
+                <div class="row">
+
+                    <div class="col-xs-6" 
+                         style="color:white;
+                                padding:15px;width: 48%;
+                                background:-webkit-linear-gradient(#3a82ee, #3a4ceeee);
+                                border-radius: 15px;
+                                margin-right: 6px;">
+                        <a href="todos.html">
+                            <i class="fas fa-arrow-circle-right" 
+                               style="float:right;
+                                      color:white;
+                                      font-size: 22px;">
+                            </i>
+                            
+                        </a>
+                        <br>
+                        <i class="fa fa-briefcase" style="color:white;font-size: 24px;"></i>
+                        <p>Business</p>
+                        <h2>15</h2>
+                         
+                        <p style="font-size: 14px;">7 tasks</p>
+
+                    </div>
+
+                    <div class="col-xs-6" 
+                         style="color: white;
+                                padding:15px;width: 46%;
+                                background:-webkit-linear-gradient(#EA40A4, #ea4079);
+                                border-radius: 15px;
+                                margin-left: 10px;">
+                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
+                                  <br>
+                        <i class="fa fa-user" style="color:white;font-size: 24px;"></i>
+                        <p>Personal</p>
+                        <h2>12</h2>
+                        <p style="font-size: 14px;">7 tasks completed</p>
+
+                    </div>
+
+                    
+
+                </div>
+
+                <br>
+
+                <div class="row">
+
+                    <div class="col-xs-6" style="color:white;
+                                                 padding:15px;
+                                                 width: 48%;
+                                                 background:-webkit-linear-gradient(yellowgreen, rgba(29, 247, 0, 0.849));
+                                                 border-radius: 15px;
+                                                 margin-right: 6px;">
+                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
+                                  <br>
+                        <i class="fa fa-stethoscope" style="color:white;font-size: 24px;"></i>
+                        <p>Health</p>
+                        <h2>14</h2>
+                        
+                        <p style="font-size: 14px;">7 tasks</p>
+
+                    </div>
+
+                    <div class="col-xs-6" style="color:white;
+                                                 padding:15px;
+                                                 width: 46%;
+                                                 background:-webkit-linear-gradient(orange, rgba(255, 68, 0, 0.781));
+                                                 border-radius: 15px;
+                                                 margin-left: 10px;">
+                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
+                                  <br>
+                        <i class="fa fa-shopping-cart" style="color:white;font-size: 24px;"></i>
+                        <p>Shopping</p>
+                        <h2>8</h2>
+                        <p style="font-size:14px">tasks</p>
+                        
+                    </div>
+
+                    
+
+                </div>
+                
+
+
+
+                </form>
+            </section>
+            
+        </div>
+        
+        
+        
+        
+        <!-- Todo List -->
+        <!--
+        <section class="todo-list">
+            
+            <div class="list" id="todo-list"></div>
+        </section>
+        -->
+        <!-- End of Todo List -->
+        
+        <br>
+
+        
+        
+    </main>
+    <!-- End App Wrapper -->
+
+{% endblock %}

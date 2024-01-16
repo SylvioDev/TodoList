@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {% endblock title %}</title>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" 
+          href="{%static 'css/bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" 
+          href="{%static 'css/main.css' %}">
+    <!-- End of CSS Import -->
+
+    <!-- Fonts -->
+	<link rel = "preconnect" href="https://fonts.googleapis.com">
+	<link rel = "preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href = "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<!-- End of Fonts -->
+
+    <!-- Scripts Import -->
+    <script src = "{% static 'css/bootstrap-5.3.2-dist/js/bootstrap.bundle.js' %}"></script>
+    <script src = "{% static 'js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'js/45e38e596f.js' %}"></script>
+    <!-- End of scripts import -->
+
+</head>
+<body>
+    <div class = "container-fluid col-lg-6 col-sm-8" 
+         style="padding:10px;background-color: whitesmoke;border-radius : 15px">
+        
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+</body>
+</html>
