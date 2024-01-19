@@ -1,0 +1,3 @@
+Username = administrator
+Email address = ratremarakoto@gmail.com
+Password = admin1234@

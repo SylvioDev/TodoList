@@ -1,0 +1,60 @@
+{% extends 'base_2.html' %}
+{% block title %} Signup {% endblock %}
+{% block content %}
+    <br>
+    <h1 style="color:lightseagreen;text-align: center;font-weight:1000;font-size: 45px;">Sign up</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% if error_message %}
+            <p class="p-d ml-b" 
+               style="color:#f44336;
+                      padding:9px;
+                      padding-left: 20px;
+                      margin-left: 25px;
+                      ">
+                   {{ error_message }}
+            </p>
+        {% endif %}
+        
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.password_repeat }}
+        <br>
+        
+        <br>
+        <center>
+            <label class="label social account">Sign up with social account</label>
+        </center>
+        <br>
+        <center>    
+            
+            <div class="button-container">
+                <button class="btn btn-md btn-primary social-facebook">
+                    <i class="fa fa-facebook"></i> facebook
+                </button>
+            
+                <button class="btn btn-md btn-danger social-google">
+                    <i class="fa fa-google"></i> google
+                </button>
+                
+            </div>
+
+        
+        </center>
+        <br><br>
+        
+        <button type="submit" class="btn btn-login">Sign up</button>
+        <br>
+        <label style="margin-left: 35%;color:gray">
+            Already have an account ? Sign  
+            <a href="{% url 'todo:login' %}">
+                here
+            </a>
+        </label>
+        <br>
+        <br>
+        
+    </form>
+
+
+{% endblock%}

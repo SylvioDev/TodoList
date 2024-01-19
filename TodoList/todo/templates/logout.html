@@ -1,0 +1,11 @@
+{% extends 'base_2.html' %}
+
+{%block title %} logout {% endblock %}
+
+{% block content %}
+    <p>You're now logged out</p>
+    <a href="{% url 'todo:login'%}">login</a>
+    <br>
+    <br>
+    <br>
+{% endblock %}

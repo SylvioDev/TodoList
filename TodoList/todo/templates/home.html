@@ -9,7 +9,7 @@
         <br>
         
         <button class = "btn btn-warning login-logout">
-            <a href="login.html">
+            <a href="{% url 'todo:logout' %}">
                 <i class="fa fa-sign-in" style="color:white"></i>
             </a>
                  
@@ -17,9 +17,11 @@
         <!-- Greeting -->
         <section class="greeting list">
             <h2 class="title">
-                <p style="margin-right: 10px;">Hello </p>
-                <label style="color:#f44336" for="">  Antonio</label> 
-                <br>
+                {% if user.is_authenticated %}
+                    <p style="margin-right: 10px;">Hello </p>
+                    <label style="color:#f44336" for=""> {{ user.username }}</label> 
+                    <br>
+                {% endif %}
                     
             </h2>
                 
