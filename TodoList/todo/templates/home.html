@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %} My todo {% endblock %}
-
+        
 {% block content %}
-
     <!-- App Wrapper -->
     <main class="app">
         <br>
@@ -26,15 +27,22 @@
             </h2>
                 
                 <center>
-                    <h2>06:14 pm</h2>
+                    <h2 id = "time"></h2>
                 </center>
                 <br>
                 
                 
                 <br>
-                <h4>Sat 06 Jan, 2024</h4>
-                <h4>You have 2 incomplete tasks</h4>
+                <h4>{{ date }}</h4>
+                <h4>You have {{ incomplete_todos }} incomplete tasks</h4>
                 
+                <button style="float:right;border-radius: 50%;background-color: #ea4079;box-shadow: 2px 5px 3px lightgray;" class="btn btn-danger">
+                    <a href="{% url 'todo:add' %}" style="color:white">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </button>
+
+                <br>
         </section>
         
         
@@ -55,7 +63,7 @@
                                 background:-webkit-linear-gradient(#3a82ee, #3a4ceeee);
                                 border-radius: 15px;
                                 margin-right: 6px;">
-                        <a href="todos.html">
+                        <a href="{% url 'todo:todo-list'%}?category=business">
                             <i class="fas fa-arrow-circle-right" 
                                style="float:right;
                                       color:white;
@@ -66,9 +74,9 @@
                         <br>
                         <i class="fa fa-briefcase" style="color:white;font-size: 24px;"></i>
                         <p>Business</p>
-                        <h2>15</h2>
+                        <h2>{{ business_todos }}</h2>
                          
-                        <p style="font-size: 14px;">7 tasks</p>
+                        
 
                     </div>
 
@@ -78,13 +86,19 @@
                                 background:-webkit-linear-gradient(#EA40A4, #ea4079);
                                 border-radius: 15px;
                                 margin-left: 10px;">
-                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
+                        <a href="{% url 'todo:todo-list'%}?category=personal">
+                            <i class="fas fa-arrow-circle-right" 
+                               style="float:right;
+                                      color:white;
+                                      font-size: 22px;">
+                            </i>
+                            
+                        </a>
                                   <br>
                         <i class="fa fa-user" style="color:white;font-size: 24px;"></i>
                         <p>Personal</p>
-                        <h2>12</h2>
-                        <p style="font-size: 14px;">7 tasks completed</p>
-
+                        <h2>{{ personal_todos }}</h2>
+                        
                     </div>
 
                     
@@ -101,13 +115,23 @@
                                                  background:-webkit-linear-gradient(yellowgreen, rgba(29, 247, 0, 0.849));
                                                  border-radius: 15px;
                                                  margin-right: 6px;">
-                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
-                                  <br>
+                      <a href="{% url 'todo:todo-list'%}?category=health">
+                            <i class="fas fa-arrow-circle-right" 
+                               style="float:right;
+                                      color:white;
+                                      font-size: 22px;">
+                            </i>
+                            
+                     </a>
+                          
+                        
+                        
+                        <br>
                         <i class="fa fa-stethoscope" style="color:white;font-size: 24px;"></i>
                         <p>Health</p>
-                        <h2>14</h2>
+                        <h2>{{ health_todos }}</h2>
                         
-                        <p style="font-size: 14px;">7 tasks</p>
+                        
 
                     </div>
 
@@ -117,12 +141,19 @@
                                                  background:-webkit-linear-gradient(orange, rgba(255, 68, 0, 0.781));
                                                  border-radius: 15px;
                                                  margin-left: 10px;">
-                        <i class="fas fa-arrow-circle-right" style="float:right;color:white;font-size: 22px;"></i>
-                                  <br>
+                        <a href="{% url 'todo:todo-list'%}?category=shopping">
+                            <i class="fas fa-arrow-circle-right" 
+                               style="float:right;
+                                      color:white;
+                                      font-size: 22px;">
+                            </i>
+                            
+                       </a>
+                     
+                        <br>
                         <i class="fa fa-shopping-cart" style="color:white;font-size: 24px;"></i>
                         <p>Shopping</p>
-                        <h2>8</h2>
-                        <p style="font-size:14px">tasks</p>
+                        <h2>{{ shopping_todos }}</h2>
                         
                     </div>
 
@@ -140,21 +171,16 @@
         
         
         
-        
-        <!-- Todo List -->
-        <!--
-        <section class="todo-list">
-            
-            <div class="list" id="todo-list"></div>
-        </section>
-        -->
-        <!-- End of Todo List -->
-        
         <br>
 
         
-        
     </main>
     <!-- End App Wrapper -->
+    
+    
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/clock.js' %}"></script>
 {% endblock %}

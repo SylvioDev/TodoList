@@ -22,20 +22,26 @@
 	<!-- End of Fonts -->
 
     <!-- Scripts Import -->
+    
     <script src = "{% static 'js/bootstrap.bundle.js' %}"></script>
     <script src = "{% static 'js/jquery-3.6.0.js' %}"></script>
     <script src="{% static 'js/45e38e596f.js' %}"></script>
+    
+    
     <!-- End of scripts import -->
-
 </head>
 <body>
     <div class = "container-fluid col-lg-6 col-sm-8" 
          style="padding:10px;background-color: whitesmoke;border-radius : 15px">
         
         {% block content %}
-
+           
         {% endblock %}
 
+        
+        
     </div>
+    {% block scripts %} 
+    {% endblock %}
 </body>
 </html>
